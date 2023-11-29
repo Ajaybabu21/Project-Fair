@@ -1,0 +1,152 @@
+
+
+                React - Notes :( Front end Technology)
+            -------------------------------------------
+
+            Basic Commands in React
+        --------------------------------
+
+        1. to create react project: npx create-react-app project-name
+        2. To run react project : npm start
+        3. Installing material UI: npm install @mui/material @emotion/react @emotion/styled
+        4. Installing Axios : npm i axios
+        5. Installing react-router-dom: npm i react-router-dom
+        6. Installing React Bootstrap : npm install react-bootstrap bootstrap
+            - import bootstrap theme from https://bootswatch.com/ and include bootstrap.min.css file in index.js file
+        7. Installing react tostify : npm i react-toastify
+        8. To Installing redux toolkit : npm install @reduxjs/toolkit react-redux
+
+            Concepts & Features
+        ----------------------------
+        1. JS Library for building UI
+        2. Single page application
+        3. Declarative Approch: 
+        4. Immutability : not changing
+        5. Pure functions : it doesnot cause any side effects
+        6. Virtual DOM 
+        7. Unidirectional data flow : parent to child
+            - Using props
+        8. JSX (Javascript XML) : const heading = <h1>Heading 1</h1>
+            - every tag should contain inside a parent tag
+            - every tag should has closing tag
+            - Use self closing tag for those who doesnot have content
+            - React fragments: <> </>
+            - class become className
+            - for become htmlFor
+            - use {js-expression} to provide js expression inside jsx
+            - to style jsx elements using CSS : style should be an object, property should be camel case
+                - Inline CSS
+                - External CSS
+        9. Transpiling (Converting JSX to js,html) - babel Library
+        10. to create react app: create-react-app command
+        11. Based on component - is small part of UI, every react app consist of tree of components : Parent/starting component: App Component
+            - its a js/jsx file with filename and component name starts with capital letter return HTML elements
+            - different types of components
+                - functional / stateless component - component created using function
+                - Class / stateful component - component created using a class  
+        12. Props : property of a component can be shared with child components
+            - it is an object 
+            - to access shared data in child component using props which will be argument of the component
+            - props data cannot be changed outside the component
+        13. Component Styling using CSS
+            - Inline Styling
+            - CSS Style sheet
+            - CSS Modules : file with exetension as .module.css
+        14. React Events Binding
+            - without arguments: call function with its name only while binding event
+            - with arguments: bind the event with arrow function and call the function with argument inside the arrow function
+            - with event as argument : use event object as argument of arrow function 
+        15. Conditional Rendering
+            - if statements : operator &&
+            - if-else statements : ternary operator ?:
+        16. React State : its object for class component
+            - store component property
+            - when state changes component re-render
+            - to change state value , use setState()
+        17. React Component Lifecycle
+            - Mounting phase : putting elelments into DOM
+                - constructor()
+                - getDerivedStateFromProps()
+                - render()
+                - componentDidMount()
+            - Updating phase : component Updating
+                - getDerivedStateFromProps()
+                - shouldComponentUpdate()
+                - render()
+                - getSnapshotBeforeUpdate()
+                - componentDidUpdate()
+            - Unmounting phase : component removed from DOM
+                - componentWillUnmount()
+        18. React Hooks : To use react Features such as state and Lifecycle in react functional component
+            - import Hooks from react and call them inside functional component
+            - Hooks can only called at top level of a  component
+            - Hook cannot be Conditional
+            - Types of Hooks
+                - Predefined Hook
+                    - useState(initial-value) : used to track state in functional component
+                    - useEffect(<function>, <dependency>) : Hook allows you to perform side effects in your components. dependency optional
+                    - useEffect runs on every render.
+                    - There are several ways to control when side effects run using dependency
+                        - No dependency passed: Runs on every render
+                        - An empty array: Runs only on the first render
+                        - Props or state values: Runs on the first render, And any time any dependency value changes
+                    - useNavigate Hook : used for redirection, return method for changing the location
+                - Custom Hook
+        19. Difference between functional and class based Component
+                functional Component                            Class Based component
+            ---------------------------------------         -----------------------------------
+            1. JS pure function accept props and            1. Class requires to extend from React Component
+                return JSX (react elelments)                    render function return JSX (react elelments) 
+            2. no need of render function                   2. Must use render function to return JSX
+            3. Run from top to bottom, once jsx return      3. Component kept alive depending on different 
+                then it cannot be alive                         life cycle phases.
+            4. Stateless component                          4. Stateful component
+            5. componentDidMount method is not available    5. Can use react lifecylce methods inside the 
+                in functional component                         component
+            6. Hooks used                                   6. not using Hooks
+            7. constructor not used                         7. use constructor to initialise state 
+        20. Rendering List (Array of Items) : using map method
+        21. React Form 
+            - handled by react component
+            - preventDefault() - method cancels the event if it is cancelable
+            - Component can be divided
+                - Controlled component : managed by react component
+                - Uncontrolled component : managed by DOM
+        22. API Call in React
+            - Using Axios Library : make http request and return Promise
+            - new instance of axios with a custom config.
+        23. Routing / set up path for the component - In React
+            - Using React-Router-Dom Library
+                - BrowserRouter : entire app should be render inside
+                - Routes : place all component needed to be set path should place inside 
+                - Route : set up path for component use Route
+            - Link : used to redirect from one page to another without reloading
+            - useNavigate Hook : redirection
+        24. REDUX : State Management System
+            - Advantages
+                - Avoid Props Drilling :
+                - Reduce Coupling between components
+            - Work flow 
+                - Store : js file , which can globally accessed by react app
+                    - used to store the state
+                    - To access store by react app use Provider selector from react-redux Library
+                    - To access state from store to component , use useSelector Hook from react-redux Library
+                - Actions : js file, used to define logic to update state
+                    - To execute Actions, component should dispatch Actions
+                        - To dispatch action in component, use useDispatch Hook from react-redux Library
+                - Reducers : js file , to update state in store
+                    - Reducers gets response from Action as payload to update state in store
+        25. REDUX Toolkit : standard way to write Redux logic
+            - Advantages 
+                - "Configuring a Redux store is too complicated"
+                - "I have to add a lot of packages to get Redux to do anything useful"
+                - "Redux requires too much boilerplate code"
+            - APIs
+                - configureStore() : To create store
+                - createReducer() :
+                - createAction() :
+                - createSlice() : combine both action and Reducers
+
+
+
+
